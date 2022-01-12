@@ -5,6 +5,16 @@ class CharacterSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Ficha de Personaje'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.arrow_back),
+        onPressed: (){
+          Navigator.pop(context);
+        },
+      ),
+    );
   }
 }
