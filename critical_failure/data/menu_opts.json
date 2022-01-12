@@ -1,0 +1,10 @@
+{
+    "nomApp" : "Menu",
+    "rutes" : [
+        {
+            "ruta" : "character",
+            "icona" : "character",
+            "texte": "Ficha de Personaje"
+        }
+    ]
+}
