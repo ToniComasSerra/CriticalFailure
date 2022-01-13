@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 final _icons = <String, IconData>{
-  'character' : Icons.accessibility_new_rounded ,
+  'character' : Icons.accessibility_new_rounded,
 };
 
 Icon getIcon(String nomIcona){
