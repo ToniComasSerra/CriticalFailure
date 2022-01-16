@@ -10,6 +10,11 @@
             "ruta" : "player",
             "icona" : "player",
             "texte" : "Guía Jugador"
+        },
+        {
+            "ruta" : "dm",
+            "icona" : "libro",
+            "texte": "Soporte para DM"
         }
     ]
 }
