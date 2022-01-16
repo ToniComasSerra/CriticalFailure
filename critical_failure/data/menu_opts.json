@@ -5,6 +5,11 @@
             "ruta" : "character",
             "icona" : "character",
             "texte": "Ficha de Personaje"
+        },
+        {
+            "ruta" : "player",
+            "icona" : "player",
+            "texte" : "Guía Jugador"
         }
     ]
 }
