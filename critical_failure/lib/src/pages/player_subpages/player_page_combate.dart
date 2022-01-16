@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'drawer_builder.dart';
+
 class PlayerCombate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -7,6 +9,7 @@ class PlayerCombate extends StatelessWidget {
       appBar: AppBar(
         title: Text('Combate'),
       ),
+      drawer: DrawerBuilder(),
     );
   }
 
