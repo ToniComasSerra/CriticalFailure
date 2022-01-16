@@ -1,0 +1,10 @@
+{
+    "nomApp" : "Bestyari",
+    "monster" : [
+        {
+            "nom" : "character",
+            "img" : "mimik.png",
+            "texte": "Ficha de Personaje"
+        }
+    ]
+}
