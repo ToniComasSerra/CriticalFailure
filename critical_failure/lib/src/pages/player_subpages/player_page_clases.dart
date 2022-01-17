@@ -1,10 +1,10 @@
-import 'package:critical_failure/src/pages/player_page.dart';
-import 'package:critical_failure/src/pages/player_subpages/mago_page.dart';
 import 'package:critical_failure/src/pages/player_subpages/drawer_builder.dart';
-import 'package:critical_failure/src/pages/player_subpages/paladin_page.dart';
 import 'package:flutter/material.dart';
 
-import 'monje_page.dart';
+import 'clases/clerigo_page.dart';
+import 'clases/luchador_page.dart';
+import 'clases/mago_page.dart';
+
 class PlayerClases extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -18,17 +18,17 @@ class PlayerClases extends StatelessWidget {
           bottom: TabBar(
             indicatorColor: Colors.white,
             tabs: [
-              Tab(text: 'Monje'),
+              Tab(text: 'Luchador'),
               Tab(text: 'Mago'),
-              Tab(text: 'Paladín'),
+              Tab(text: 'Clérigo'),
             ]
           ),
         ),
         body: TabBarView(
           children: [
-            Monje(),
+            Luchador(),
             Mago(),
-            Paladin()
+            Clerigo()
           ]
         ),
         drawer: DrawerBuilder(),

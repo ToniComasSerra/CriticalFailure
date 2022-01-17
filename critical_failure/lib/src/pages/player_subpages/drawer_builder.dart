@@ -1,5 +1,4 @@
 import 'package:critical_failure/src/pages/player_subpages/player_page_clases.dart';
-import 'package:critical_failure/src/pages/player_subpages/player_page_combate.dart';
 import 'package:critical_failure/src/pages/player_subpages/player_page_razas.dart';
 import 'package:flutter/material.dart';
 
@@ -30,16 +29,11 @@ class DrawerBuilder extends StatelessWidget {
                   icon: Icons.people,
                   onClicked: () => _selectedElement(context, 2),
                 ),
-                _elementsMenu(
-                  text: 'Combate',
-                  icon: Icons.hardware,
-                  onClicked: () => _selectedElement(context, 3),
-                ),
                 Divider(color: Colors.red,),
                 _elementsMenu(
                   text: 'Menú de inicio', 
                   icon: Icons.arrow_back,
-                  onClicked: () => _selectedElement(context, 4)
+                  onClicked: () => _selectedElement(context, 3)
                 ),
               ],
             ),
@@ -74,11 +68,6 @@ class DrawerBuilder extends StatelessWidget {
         ));
         break;
       case 3:
-        Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => PlayerCombate(),
-        ));
-        break;
-      case 4:
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => HomePage(),
         ));
