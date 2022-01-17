@@ -5,8 +5,10 @@ class PlayerRazas extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.red[100],
       appBar: AppBar(
         title: Text('Razas'),
+        backgroundColor: Colors.red[300],
       ),
       drawer: DrawerBuilder(),
     );
