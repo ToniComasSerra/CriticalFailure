@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Menu Inicial'),
+        title: const Text('Menú Inicial'),
       ),
       body: _opcionsMenu(),
     );
@@ -33,12 +33,12 @@ List<Widget> _llistat(BuildContext context, List<dynamic>? data) {
     final widgetTemp = ListTile(
       title: Text(element['texte']),
       leading: getIcon(element['icona']),
-      trailing: Icon(Icons.keyboard_arrow_right, color: Colors.blue,),
+      trailing: const Icon(Icons.keyboard_arrow_right, color: Colors.blue,),
       onTap: () {
         Navigator.pushNamed(context, element['ruta']);
       },
     );
-    elements..add(widgetTemp)..add(Divider());
+    elements..add(widgetTemp)..add(const Divider());
    });
   return elements;
 }
