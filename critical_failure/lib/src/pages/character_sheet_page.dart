@@ -62,11 +62,12 @@ class _CharacterSheetState extends State<CharacterSheet> {
                 padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
               ),
               onPressed: () {
-                /*final validactionSucces = _formKey.currentState.validate();
+                final validactionSucces = _formKey.currentState!.validate();
 
                 if(validactionSucces) {
-                  _formKey.currentState.save();
-                }*/
+                  _formKey.currentState!.save();
+                  
+                }
               },
               child: const Text('Crear')
             )
