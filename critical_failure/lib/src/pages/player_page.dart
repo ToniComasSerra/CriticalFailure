@@ -1,8 +1,4 @@
-import 'package:critical_failure/src/pages/home_page.dart';
 import 'package:critical_failure/src/pages/player_subpages/drawer_builder.dart';
-import 'package:critical_failure/src/pages/player_subpages/player_page_clases.dart';
-import 'package:critical_failure/src/pages/player_subpages/player_page_combate.dart';
-import 'package:critical_failure/src/pages/player_subpages/player_page_razas.dart';
 import 'package:flutter/material.dart';
 
 class Player extends StatelessWidget {
