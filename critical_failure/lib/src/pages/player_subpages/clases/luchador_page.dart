@@ -15,7 +15,7 @@ class Luchador extends StatelessWidget {
               children: [
                 FadeInImage(
                   placeholder: AssetImage('assets/dado.gif'),
-                  image: NetworkImage('https://i.imgur.com/1MzgkLc.png'),
+                  image: NetworkImage('https://i.imgur.com/VmOxMtI.png'),
                   fadeInDuration: Duration(milliseconds: 100),
                   fit: BoxFit.cover,
                   height: 200,
