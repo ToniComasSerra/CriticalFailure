@@ -28,26 +28,24 @@ class Player extends StatelessWidget {
                   child: RichText(
                     textAlign: TextAlign.center,
                     text: TextSpan(
-                        style: TextStyle(color: Colors.black, fontSize: 20),
-                        children: <TextSpan>[
-                          TextSpan(
-                              text:
-                                  'En este apartado se muestran varios menús con diversos elementos necesarios para la comprensión de una partida de D&D. Es información muy básica en referente a la '),
-                          TextSpan(
-                              text: 'creación de personaje ',
-                              style: TextStyle(fontWeight: FontWeight.bold)),
-                          TextSpan(text: 'mediante la selección de '),
-                          TextSpan(
-                              text: 'clase ',
-                              style: TextStyle(fontStyle: FontStyle.italic)),
-                          TextSpan(text: 'y '),
-                          TextSpan(
-                              text: 'raza ',
-                              style: TextStyle(fontStyle: FontStyle.italic)),
-                          TextSpan(
-                              text:
-                                  'e información sobre el sistema de combate.')
-                        ]),
+                      style: TextStyle(color: Colors.black, fontSize: 20),
+                      children: <TextSpan>[
+                        TextSpan(
+                            text:
+                                'En este apartado se muestran varios menús con diversos elementos necesarios para la comprensión de una partida de D&D. Es información muy básica en referente a la '),
+                        TextSpan(
+                            text: 'creación de personaje ',
+                            style: TextStyle(fontWeight: FontWeight.bold)),
+                        TextSpan(text: 'mediante la selección de '),
+                        TextSpan(
+                            text: 'clase ',
+                            style: TextStyle(fontStyle: FontStyle.italic)),
+                        TextSpan(text: 'y '),
+                        TextSpan(
+                            text: 'raza.',
+                            style: TextStyle(fontStyle: FontStyle.italic)),
+                      ]
+                    ),
                   ),
                 ),
               ],
