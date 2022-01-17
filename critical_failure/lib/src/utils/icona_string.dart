@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 final _icons = <String, IconData>{
   'character' : Icons.accessibility_new_rounded,
   'player' : Icons.person_pin_rounded,
-  'character' : Icons.accessibility_new_rounded ,
   'libro' : Icons.auto_stories,
 };
 

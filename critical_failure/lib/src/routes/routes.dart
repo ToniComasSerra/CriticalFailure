@@ -9,6 +9,6 @@ Map<String, WidgetBuilder> getRoutes() {
     '/' : (BuildContext context) => const HomePage(),
     'character' : (BuildContext context) => CharacterSheet(),
     'player' : (BuildContext context) => Player(),
-    'dm' : (BuildContext context) => DungeonMaster(),
+    'dm' : (BuildContext context) => const DungeonMaster(),
   };
 }
