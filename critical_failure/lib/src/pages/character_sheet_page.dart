@@ -9,7 +9,24 @@ class CharacterSheet extends StatefulWidget {
 }
 
 class _CharacterSheetState extends State<CharacterSheet> {
+  late String _nombre;
+  // La globalkey o formkey es una referencia al form mismo, tiene un uso standarizado en documentos oficiales
+  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
 
+  Widget _buildNombre() {
+    return TextFormField(
+      decoration: InputDecoration(labelText: 'Nombre del personaje'),
+      validator: (value) {
+        if(value!.isEmpty){
+          return 'Se requiere un nombre';
+        }
+      },
+      onSaved: (value){
+        _nombre = value!;
+      },
+    );
+  }
+  
   String _raza = '';
   String _resultado = '';
   final GlobalKey<FormState> formkey = GlobalKey<FormState>();

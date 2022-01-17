@@ -24,14 +24,14 @@ class DungeonMaster extends StatelessWidget {
             borderRadius: BorderRadius.circular(40.0),
             child:Align(
               alignment: Alignment.center,
-              child:Image.network('https://i.pinimg.com/originals/42/36/84/42368427019fcefd4a5c72defe73fb32.jpg'),)),
+              child:Image(image: AssetImage('lib/src/utils/img/mimik.PNG'),),)),
             Divider(),
           Table(
             children: <TableRow>[
               TableRow(
                 children: [
                   GestureDetector(
-                    onTap: () => BestyariPage(),
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => BestyariPage(context))),
                     child: Hero(
                       tag: 'monsterIcon',
                       child:_showIcon(mon)
