@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
-class Monje extends StatelessWidget {
+class Mago extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,7 +13,7 @@ class Monje extends StatelessWidget {
               children: [
                 FadeInImage(
                   placeholder: AssetImage('assets/dado.gif'),
-                  image: NetworkImage('https://res.cloudinary.com/teepublic/image/private/s---_YEb1S0--/t_Resized%20Artwork/c_fit,g_north_west,h_1054,w_1054/co_ffffff,e_outline:53/co_ffffff,e_outline:inner_fill:53/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_auto,h_630,q_90,w_630/v1581498607/production/designs/7945100_0.jpg'),
+                  image: NetworkImage('https://res.cloudinary.com/teepublic/image/private/s--N1qjDZk0--/t_Resized%20Artwork/c_fit,g_north_west,h_954,w_954/co_000000,e_outline:48/co_000000,e_outline:inner_fill:48/co_ffffff,e_outline:48/co_ffffff,e_outline:inner_fill:48/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_auto,h_630,q_90,w_630/v1579088564/production/designs/7582843_0.jpg'),
                   fadeInDuration: Duration(milliseconds: 100),
                   fit: BoxFit.cover,
                 )
@@ -29,10 +30,8 @@ class Monje extends StatelessWidget {
                 style: TextStyle(color: Colors.black, fontSize: 20),
                   children: <TextSpan> [
                     TextSpan(text: 'La clase del '),
-                    TextSpan(text: 'monje ', style: TextStyle(fontWeight: FontWeight.bold)),
-                    TextSpan(text: 'es una clase marcial de combate cuerpo a cuerpo que utiliza el '),
-                    TextSpan(text: 'ki ', style: TextStyle(fontWeight: FontWeight.bold)),
-                    TextSpan(text: 'para potenciar sus ataques y aturdir al enemigo. Suele atacar con sus puños o con armas simples como bastones o mazas.')
+                    TextSpan(text: 'mago ', style: TextStyle(fontWeight: FontWeight.bold)),
+                    TextSpan(text: 'es una clase de conjurador que utiliza hechizos poderosos de un único objetivo o en área. Es muy débil y cualquier ataque que reciba puede ser fatal.'),
                   ]
               ),
             ),
