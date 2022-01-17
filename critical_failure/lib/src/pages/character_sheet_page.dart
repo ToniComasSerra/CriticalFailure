@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:dropdown_formfield/dropdown_formfield.dart';
 
 class CharacterSheet extends StatefulWidget {
-  CharacterSheet({Key? key}) : super(key: key);
+  const CharacterSheet({Key? key}) : super(key: key);
 
   @override
   _CharacterSheetState createState() => _CharacterSheetState();
@@ -29,7 +29,7 @@ class _CharacterSheetState extends State<CharacterSheet> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Ficha de Personaje'),
+        title: const Text('Ficha de Personaje'),
       ),
       body: Center(
         child: Form(
@@ -38,7 +38,7 @@ class _CharacterSheetState extends State<CharacterSheet> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Container(
-                padding: EdgeInsets.all(16),
+                padding: const EdgeInsets.all(16),
                 // Esto es una variante del dropdrownbutton que se importa añadiendo la dependencia en el fichero pubspec.yalm
                 child: DropDownFormField(
                   titleText: 'Elije tu raza',
@@ -79,7 +79,7 @@ class _CharacterSheetState extends State<CharacterSheet> {
               Container(
                 padding: EdgeInsets.all(8),
                 child: ElevatedButton(
-                  child: Text('Guardar'),
+                  child: const Text('Guardar'),
                   onPressed: _saveForm,
                 ),
               )
