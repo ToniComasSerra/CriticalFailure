@@ -1,4 +1,6 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Monje extends StatelessWidget {
   @override
@@ -32,7 +34,19 @@ class Monje extends StatelessWidget {
                     TextSpan(text: 'monje ', style: TextStyle(fontWeight: FontWeight.bold)),
                     TextSpan(text: 'es una clase marcial de combate cuerpo a cuerpo que utiliza el '),
                     TextSpan(text: 'ki ', style: TextStyle(fontWeight: FontWeight.bold)),
-                    TextSpan(text: 'para potenciar sus ataques y aturdir al enemigo. Suele atacar con sus puños o con armas simples como bastones o mazas.')
+                    TextSpan(text: 'para potenciar sus ataques y aturdir al enemigo. Suele atacar con sus puños o con armas simples como bastones o mazas.'),
+                    TextSpan(
+                      text: 'Guía Monje',
+                      style: TextStyle(decoration: TextDecoration.underline),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () async {
+                          if (await canLaunch("https://youtu.be/1CZDGFFHnI4?list=PLDnRMnDDjAzK5uZLidDUtHtD1iN06Qe0G") == true) {
+                            launch("https://youtu.be/1CZDGFFHnI4?list=PLDnRMnDDjAzK5uZLidDUtHtD1iN06Qe0G");
+                          } else {
+                            print("Error, no se puede acceder a la URL.");
+                          }
+                      }
+                    ),
                   ]
               ),
             ),
