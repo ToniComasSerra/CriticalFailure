@@ -8,8 +8,10 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blue[100],
       appBar: AppBar(
         title: const Text('Menú Inicial'),
+        backgroundColor: Colors.blue[300],
       ),
       body: _opcionsMenu(),
     );
