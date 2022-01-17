@@ -1,15 +1,21 @@
-import 'package:dropdown_formfield/dropdown_formfield.dart';
-import 'package:flutter/material.dart';
+  late String _nombre;
+  // La globalkey o formkey es una referencia al form mismo, tiene un uso standarizado en documentos oficiales
+  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
 
-class CharacterSheet extends StatefulWidget {
-  CharacterSheet({Key? key}) : super(key: key);
-
-  @override
-  _CharacterSheetState createState() => _CharacterSheetState();
-}
-
-class _CharacterSheetState extends State<CharacterSheet> {
-
+  Widget _buildNombre() {
+    return TextFormField(
+      decoration: InputDecoration(labelText: 'Nombre del personaje'),
+      validator: (value) {
+        if(value!.isEmpty){
+          return 'Se requiere un nombre';
+        }
+      },
+      onSaved: (value){
+        _nombre = value!;
+      },
+    );
+  }
+  
   String _raza = '';
   String _resultado = '';
   final GlobalKey<FormState> formkey = GlobalKey<FormState>();
