@@ -34,7 +34,9 @@ class Luchador extends StatelessWidget {
                   children: <TextSpan> [
                     TextSpan(text: 'La clase del '),
                     TextSpan(text: 'luchador ', style: TextStyle(fontWeight: FontWeight.bold)),
-                    TextSpan(text: 'es la clase marcial más básica. Es la idónea si quieres equilibrar daño y vida y es perfecta para principiantes.'),
+                    TextSpan(text: 'es la clase marcial más básica. Es la idónea si quieres '),
+                    TextSpan(text: 'equilibrar daño y vida ', style: TextStyle(fontWeight: FontWeight.bold)),
+                    TextSpan(text: 'y es perfecta para principiantes por la versatilidad en combate.')
                   ]
               ),
             ),
@@ -42,10 +44,17 @@ class Luchador extends StatelessWidget {
 
           Padding(padding: EdgeInsets.symmetric(vertical: 30)),
 
-          ElevatedButton(
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: ElevatedButton(
             child: RichText(
               text: TextSpan(
-                
+                text: 'Guía Luchador',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold
+                )
               )
             ),
             style: ElevatedButton.styleFrom(
@@ -59,7 +68,9 @@ class Luchador extends StatelessWidget {
                 print("Error, no se puede acceder a la URL");
             }
             
-          )
+          ),
+          ),
+          
         ],
       ),
     );

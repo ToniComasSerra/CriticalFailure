@@ -29,7 +29,7 @@ class DrawerBuilder extends StatelessWidget {
                   icon: Icons.people,
                   onClicked: () => _selectedElement(context, 2),
                 ),
-                Divider(color: Colors.red,),
+                Divider(color: Colors.white, height: 20),
                 _elementsMenu(
                   text: 'Menú de inicio', 
                   icon: Icons.arrow_back,
