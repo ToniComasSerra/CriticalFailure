@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
 
-class _BestyariProvider{
+class _BestyariProvider {
   List<dynamic> opcions = [];
-  _Bestyarirovider() {
+  _BestyariProvider() {
     CarregarBestyari();
   }
 
@@ -11,6 +11,7 @@ class _BestyariProvider{
     final resposta = await rootBundle.loadString('data/bestiary.json');
     Map dataMap = json.decode(resposta);
     opcions = dataMap['monsters'];
+    print(opcions);
     return opcions;
   }
 }
