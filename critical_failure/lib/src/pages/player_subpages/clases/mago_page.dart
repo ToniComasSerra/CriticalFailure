@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Mago extends StatelessWidget {
   @override
@@ -34,9 +35,39 @@ class Mago extends StatelessWidget {
                   children: <TextSpan> [
                     TextSpan(text: 'La clase del '),
                     TextSpan(text: 'mago ', style: TextStyle(fontWeight: FontWeight.bold)),
-                    TextSpan(text: 'es una clase de conjurador que utiliza hechizos poderosos de un único objetivo o en área. Es muy débil y cualquier ataque que reciba puede ser fatal.'),
+                    TextSpan(text: 'es una clase de conjurador que utiliza '),
+                    TextSpan(text: 'hechizos poderosos de un único objetivo o en área', style: TextStyle(fontWeight: FontWeight.bold)),
+                    TextSpan(text: '. Es muy débil y cualquier ataque que reciba puede ser fatal.')
                   ]
               ),
+            ),
+          ),
+
+          Padding(padding: EdgeInsets.symmetric(vertical: 30)),
+
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: ElevatedButton(
+            child: RichText(
+              text: TextSpan(
+                text: 'Guía Mago',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold
+                )
+              )
+            ),
+            style: ElevatedButton.styleFrom(
+              primary: Colors.red[300],
+              minimumSize: Size(100, 100)
+            ),
+              onPressed: () async {
+                if (await canLaunch("https://youtu.be/U1Gs8WTddI4"))
+                  launch("https://youtu.be/U1Gs8WTddI4");
+                else
+                print("Error, no se puede acceder a la URL");
+              }
             ),
           )
         ],
