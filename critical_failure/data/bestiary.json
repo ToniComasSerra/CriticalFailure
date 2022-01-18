@@ -1,6 +1,6 @@
 {
     "nomApp" : "Bestyari",
-    "monster" : [
+    "monsters" : [
         {
             "nom" : "character",
             "img" : "mimik.png",
