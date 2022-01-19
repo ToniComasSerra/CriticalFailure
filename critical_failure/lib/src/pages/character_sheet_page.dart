@@ -13,6 +13,9 @@ class _CharacterSheetState extends State<CharacterSheet> {
   final _formKey = GlobalKey<FormBuilderState>();
   var clases = ['Luchador', 'Mago', 'Clerigo'];
   var razas = ['Humano', 'Elfo', 'Enano'];
+  String _nombre = '';
+  String _clase = '';
+  String _raza = '';
 
   @override
   Widget build(BuildContext context) {
@@ -26,89 +29,103 @@ class _CharacterSheetState extends State<CharacterSheet> {
       body: FormBuilder(
         key: _formKey,
         child: ListView(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
           children: [
-            const Padding(padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10)),
-
-            Container(
-              child: Column(
-                children: [
-                  const FadeInImage(
-                    placeholder: AssetImage('assets/dado.gif'), 
-                    image: NetworkImage('https://i.imgur.com/SdRQ8eh.png'),
-                    fadeInDuration: Duration(milliseconds: 100),
-                    height: 250,
-                    fit: BoxFit.cover,
-                  ),
-                ],
-              ),
-            ),
-
-            FormBuilderTextField(
-              name: 'nombre',
-              decoration: const InputDecoration(labelText: 'Nombre para el personaje'),
-              validator: (value) {
-                if(value!.isEmpty || !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
-                  return "Inserta un nombre valido";
-                } else {
-                  return null;
-                }
-              },
-            ),
-
-            FormBuilderDropdown(
-              name: 'clase',
-              decoration: const InputDecoration(labelText: 'Clases'),
-              allowClear: true,
-              hint: const Text('Selecciona una clase para el personaje'),
-              items: clases.map((clase) => DropdownMenuItem(
-                value: clase,
-                child: Text(clase),
-              )).toList(),
-            ),
-
-            FormBuilderDropdown(
-              name: 'raza',
-              decoration: const InputDecoration(labelText: 'Razas'),
-              allowClear: true,
-              hint: const Text('Selecciona una raza para el personaje'),
-              items: razas.map((raza) => DropdownMenuItem(
-                value: raza,
-                child: Text(raza),
-              )).toList(),
-            ),
-
-            Wrap(
-              children: <Widget>[
-                ElevatedButton(
-                  child: const Text('Reset'),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.yellow[300],
-                    padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-                  ),
-                  onPressed: () {
-                    _formKey.currentState!.reset();
-                    FocusScope.of(context).unfocus();
-                  } ,
-                ),
-
-                ElevatedButton(
-                  child: const Text('Crear'),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.yellow[300],
-                    padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-                  ),
-                  onPressed: () {
-                    if(_formKey.currentState!.validate()) {
-                      
-                    }
-                  },
-                )
-              ],
-            ),
+            _mostrarIcono(),
+            _inputNombre(),
+            _inputClase(),
+            _inputRaza(),
+            _mostrarBotones()
           ],
         ),
         autovalidateMode: AutovalidateMode.onUserInteraction,
       ),
+    );
+  }
+
+  Widget _mostrarIcono() {
+    return const FadeInImage(
+      placeholder: AssetImage('assets/dado.gif'), 
+      image: NetworkImage('https://i.imgur.com/SdRQ8eh.png'),
+      fadeInDuration: Duration(milliseconds: 100),
+      height: 250,
+    );
+  }
+
+  Widget _inputNombre() {
+    return FormBuilderTextField(
+      name: 'nombre',
+      decoration: const InputDecoration(labelText: 'Nombre para el personaje'),
+      onChanged: (valor) {
+        setState(() {
+          _nombre = valor!;
+        });
+      },
+      validator: (value) {
+        if(value!.isEmpty || !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
+          return "Inserta un nombre valido";
+        }
+      },
+    );
+  }
+
+  Widget _inputClase() {
+    return FormBuilderDropdown(
+      name: 'clase',
+      decoration: const InputDecoration(labelText: 'Selecciona una clase para el personaje'),
+      initialValue: 'Luchador',
+      items: clases.map((clase) => DropdownMenuItem(
+        value: clase,
+        child: Text(clase),
+      )).toList(),
+    );
+  }
+
+  Widget _inputRaza() {
+    return FormBuilderDropdown(
+      name: 'raza',
+      decoration: const InputDecoration(labelText: 'Selecciona una raza para el personaje'),
+      initialValue: 'Humano',
+      items: razas.map((raza) => DropdownMenuItem(
+        value: raza,
+        child: Text(raza),
+      )).toList(),
+    );
+  }
+
+  Widget _mostrarBotones() {
+    return Row(
+      children: <Widget>[
+        ElevatedButton(
+          child: const Text('Reset'),
+          style: ElevatedButton.styleFrom(
+            primary: Colors.yellow[300],
+            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+          ),
+          onPressed: () {
+            _formKey.currentState!.reset();
+            FocusScope.of(context).unfocus();
+          } ,
+        ),
+
+        ElevatedButton(
+          child: const Text('Crear'),
+          style: ElevatedButton.styleFrom(
+            primary: Colors.yellow[300],
+            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+          ),
+          onPressed: () {
+            showDialog(
+              context: context,
+              builder: (context) {
+                return const AlertDialog(
+                  title: Text('Personatje Valid!'),
+                );
+              }
+            );
+          }
+        )  
+      ],
     );
   }
 }
