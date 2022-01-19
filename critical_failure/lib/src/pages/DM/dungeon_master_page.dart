@@ -1,8 +1,8 @@
-// ignore_for_file: prefer_const_constructors
-
+import 'package:critical_failure/src/pages/DM/spell_page.dart';
 import 'package:flutter/material.dart';
 
 import 'bestyari_page.dart';
+import 'objetos_page.dart';
 
 class DungeonMaster extends StatelessWidget {
   const DungeonMaster({Key? key}) : super(key: key);
@@ -44,15 +44,16 @@ class DungeonMaster extends StatelessWidget {
                           builder: (context) => BestyariPage(context))),
                   child: Hero(tag: 'monsterIcon', child: _showIcon(mon))),
               GestureDetector(
-                  onTap: () => _gotoDetailsPage(context, "Objetos", 'lootIcon',
-                      'https://i.pinimg.com/originals/a1/d0/f2/a1d0f275a1bec4bc6eae581cd4b87c22.png'),
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ObjetosPage(context))),
                   child: Hero(tag: 'lootIcon', child: _showIcon(loot))),
               GestureDetector(
-                  onTap: () => _gotoDetailsPage(
+                  onTap: () => Navigator.push(
                       context,
-                      "Hechizos",
-                      'spellsIcon',
-                      'https://ih1.redbubble.net/image.1216680461.0653/flat,750x1000,075,f.jpg'),
+                      MaterialPageRoute(
+                          builder: (context) => SpellPage(context))),
                   child: Hero(tag: 'spellsIcon', child: _showIcon(spells)))
             ]),
           ]),

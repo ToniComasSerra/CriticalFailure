@@ -2,9 +2,24 @@
     "nomApp" : "Bestyari",
     "monsters" : [
         {
-            "nom" : "character",
-            "img" : "mimik.png",
-            "texte": "Ficha de Personaje"
+            "nom" : "Mimik",
+            "img" : "mimik.PNG",
+            "texte": "Los mimetos son depredadores capaces de asumir la forma de objetos inanimados para atraer a sus presas a su perdición. En las mazmorras, estas astutas criaturas suelen copiar la apariencia de puertas y cofres, pues han aprendido que estos aspectos son especialmente efectivos a la hora de captar la atención de potenciales víctimas. "
+        },
+        {
+            "nom" : "Horse Luis",
+            "img" : "Hors.PNG",
+            "texte": "Las pesadillas aparecen rodeadas de una nube de humo, con su crin, cola y pezuñas envueltas en llamas. La espeluznante y oscura forma de estos seres se mueve con una velocidad sobrenatural, desapareciendo en una nube de azufre tan rápidamente como apareció."
+        },
+        {
+            "nom" : "Furro",
+            "img" : "furro.PNG",
+            "texte": "El rugido de un minotauro es un grito de batalla salvaje que la mayoría de criaturas civilizadas temen. Nacidos en el reino mortal a través de rituales demoníacos, los minotauros son conquistadores bestiales y carnívoros que solo viven para cazar. Su pelaje negro o marrón está manchado con la sangre de sus enemigos caídos, y el hedor a muerte les acompaña"
+        },
+        {
+            "nom" : "Lobo",
+            "img" : "lobo.PNG",
+            "texte": "Oído y Olfato Agudos. El lobo posee ventaja en las pruebas de Sabiduría (Percepción) que dependan del oído o del olfato. Atacar en Manada. El lobo tiene ventaja en las tiradas de ataque contra criaturas que estén a 5 pies o menos de, al menos, un aliado del lobo que no esté incapacitado."
         }
     ]
 }
