@@ -17,8 +17,7 @@ class Player extends StatelessWidget {
               children: [
                 FadeInImage(
                   placeholder: AssetImage('assets/dado.gif'),
-                  image: NetworkImage(
-                      'https://noticiasgamer.com/wp-content/uploads/2021/03/calabozos_y_dragones.jpg'),
+                  image: NetworkImage('https://i.imgur.com/1mv1zFA.png'),
                   fadeInDuration: Duration(milliseconds: 100),
                   height: 250,
                   fit: BoxFit.cover,
