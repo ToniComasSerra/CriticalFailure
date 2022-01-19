@@ -1,16 +1,13 @@
-import 'package:critical_failure/src/providers/bestryari_providers.dart';
-import 'package:critical_failure/src/providers/menu_providers.dart';
-import 'package:critical_failure/src/utils/icona_string.dart';
+import 'package:critical_failure/src/providers/spell_providers.dart';
 import 'package:flutter/material.dart';
-import 'dart:convert';
 
-class BestyariPage extends StatelessWidget {
-  const BestyariPage(BuildContext context, {Key? key}) : super(key: key);
+class SpellPage extends StatelessWidget {
+  const SpellPage(BuildContext context, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: new Center(child: new Text("Bestyari", textAlign: TextAlign.center),),
+      appBar: AppBar(title: new Center(child: new Text("Hechizos", textAlign: TextAlign.center),),
              backgroundColor: Colors.green),
              backgroundColor: Colors.green.shade200,
         body: _opcionsBestyari()
@@ -20,7 +17,7 @@ class BestyariPage extends StatelessWidget {
 
 Widget _opcionsBestyari() {
   return FutureBuilder(
-    future: bestyariProvider.CarregarBestyari(),
+    future: spellProvider.CarregarSpell(),
     builder: (context, AsyncSnapshot<List<dynamic>> snapshot) {
       return ListView(
         children: _llistat(context, snapshot.data),

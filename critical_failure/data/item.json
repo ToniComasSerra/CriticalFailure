@@ -1,0 +1,25 @@
+{
+    "nomApp" : "Items",
+    "items" : [
+        {
+            "nom" : "Espadón",
+            "img" : "ultra.jpeg",
+            "texte": "Este ultra espadón cuenta con una hoja gruesa que lo convierte en uno de los más pesados. Devastador, pero extremadamente pesado. Hay quien cree en los rumores que dicen que esta espada ponía el límite la fuerza humana."
+        },
+        {
+            "nom" : "Escudo Puerta",
+            "img" : "shild.jpg",
+            "texte": "Este solía ser la puerta encantada de una bóveda, forjada en tiempos antiguos e instalada en una montaña. Braum escuchó cómo desde dentro se oían algunos lamentos. Sin embargo, no pudo derribar la puerta. Decidido, se abrió paso a puñetazos a través de la roca descubierta de la montaña para rescatar al niño trol que estaba atrapado allí adentro. Arrancó desde sus bisagras la puerta irrompible, la cual ha cargado consigo desde ese entonces."
+        },
+        {
+            "nom" : "Martillo",
+            "img" : "hammer.jpeg",
+            "texte": ""
+        },
+        {
+            "nom" : "Ballesta",
+            "img" : "ballesta.png",
+            "texte": ""
+        }
+    ]
+}
