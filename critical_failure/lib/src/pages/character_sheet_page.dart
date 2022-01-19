@@ -61,11 +61,11 @@ class _CharacterSheetState extends State<CharacterSheet> {
           _nombre = valor!;
         });
       },
-      validator: (value) {
+      /*validator: (value) {
         if(value!.isEmpty || !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
           return "Inserta un nombre valido";
         }
-      },
+      },*/
     );
   }
 
