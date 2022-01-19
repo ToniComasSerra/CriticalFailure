@@ -29,12 +29,18 @@ class _CharacterSheetState extends State<CharacterSheet> {
           children: [
             const Padding(padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10)),
 
-            const FadeInImage(
-              placeholder: AssetImage('assets/dado.gif'), 
-              image: NetworkImage('https://i.imgur.com/SdRQ8eh.png'),
-              fadeInDuration: Duration(milliseconds: 100),
-              height: 100,
-              fit: BoxFit.cover,
+            Container(
+              child: Column(
+                children: [
+                  const FadeInImage(
+                    placeholder: AssetImage('assets/dado.gif'), 
+                    image: NetworkImage('https://i.imgur.com/SdRQ8eh.png'),
+                    fadeInDuration: Duration(milliseconds: 100),
+                    height: 250,
+                    fit: BoxFit.cover,
+                  ),
+                ],
+              ),
             ),
 
             FormBuilderTextField(
