@@ -9,7 +9,6 @@ class CharacterSheet extends StatefulWidget {
 }
 
 class _CharacterSheetState extends State<CharacterSheet> {
-  
   final _formKey = GlobalKey<FormBuilderState>();
   var clases = ['Luchador', 'Mago', 'Clerigo'];
   var razas = ['Humano', 'Elfo', 'Enano'];
