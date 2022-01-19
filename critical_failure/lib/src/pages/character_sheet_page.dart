@@ -9,7 +9,6 @@ class CharacterSheet extends StatefulWidget {
 }
 
 class _CharacterSheetState extends State<CharacterSheet> {
-  
   final _formKey = GlobalKey<FormBuilderState>();
   var clases = ['Luchador', 'Mago', 'Clerigo'];
   var razas = ['Humano', 'Elfo', 'Enano'];
@@ -61,11 +60,11 @@ class _CharacterSheetState extends State<CharacterSheet> {
           _nombre = valor!;
         });
       },
-      validator: (value) {
+      /*validator: (value) {
         if(value!.isEmpty || !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
           return "Inserta un nombre valido";
         }
-      },
+      },*/
     );
   }
 

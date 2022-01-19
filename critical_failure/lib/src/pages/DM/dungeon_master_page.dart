@@ -32,7 +32,7 @@ class DungeonMaster extends StatelessWidget {
               child: Align(
                 alignment: Alignment.center,
                 child: Image.network(
-                    'https://i.pinimg.com/originals/42/36/84/42368427019fcefd4a5c72defe73fb32.jpg'),
+                    'https://i.imgur.com/bYriJqV.png'),
               )),
           Divider(),
           Table(children: <TableRow>[
