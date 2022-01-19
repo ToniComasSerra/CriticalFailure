@@ -29,9 +29,24 @@ class _CharacterSheetState extends State<CharacterSheet> {
           children: [
             const Padding(padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10)),
 
+            const FadeInImage(
+              placeholder: AssetImage('assets/dado.gif'), 
+              image: NetworkImage('https://i.imgur.com/SdRQ8eh.png'),
+              fadeInDuration: Duration(milliseconds: 100),
+              height: 200,
+              fit: BoxFit.cover,
+            ),
+
             FormBuilderTextField(
               name: 'nombre',
               decoration: const InputDecoration(labelText: 'Nombre para el personaje'),
+              validator: (value) {
+                if(value!.isEmpty || !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
+                  return "Inserta un nombre valido";
+                } else {
+                  return null;
+                }
+              },
             ),
 
             FormBuilderDropdown(
@@ -56,21 +71,32 @@ class _CharacterSheetState extends State<CharacterSheet> {
               )).toList(),
             ),
 
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.yellow[300],
-                padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-              ),
-              onPressed: () {
-                final validactionSucces = _formKey.currentState!.validate();
+            Wrap(
+              children: <Widget>[
+                ElevatedButton(
+                  child: const Text('Reset'),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.yellow[300],
+                    padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                  ),
+                  onPressed: () {
+                    _formKey.currentState!.reset();
+                    FocusScope.of(context).unfocus();
+                  } ,
+                ),
 
-                if(validactionSucces) {
-                  _formKey.currentState!.save();
-                  
-                }
-              },
-              child: const Text('Crear')
-            )
+                ElevatedButton(
+                  child: const Text('Crear'),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.yellow[300],
+                    padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                  ),
+                  onPressed: () {
+                    
+                  },
+                )
+              ],
+            ),
           ],
         ),
         autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -78,3 +104,4 @@ class _CharacterSheetState extends State<CharacterSheet> {
     );
   }
 }
+
