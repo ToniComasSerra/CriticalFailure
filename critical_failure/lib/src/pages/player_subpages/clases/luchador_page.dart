@@ -10,6 +10,7 @@ class Luchador extends StatelessWidget {
         children: [
           SizedBox(height: 20),
 
+          //Aquí cargamos la imagen en un Container para su mejor uso
           Container(
             child: Column(
               children: [
@@ -26,6 +27,7 @@ class Luchador extends StatelessWidget {
 
           SizedBox(height: 20.0),
 
+          //Container con RichText, lo que nos permite editar y darle formato al texto
           Container(
             child: RichText(
               textAlign: TextAlign.center,
@@ -44,6 +46,11 @@ class Luchador extends StatelessWidget {
 
           Padding(padding: EdgeInsets.symmetric(vertical: 30)),
 
+          /*
+           * Align nos permitirá alinear el botón. El botón utiliza un RichText para darle formato
+           * al texto. En el evento onPressed() hemos añadido un enlace a un vídeo de youtube
+           * mediante una dependencia llamada url_launcher.
+           */
           Align(
             alignment: Alignment.bottomCenter,
             child: ElevatedButton(

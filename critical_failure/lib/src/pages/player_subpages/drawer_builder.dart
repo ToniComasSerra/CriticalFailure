@@ -6,6 +6,7 @@ import '../home_page.dart';
 import '../player_page.dart';
 
 class DrawerBuilder extends StatelessWidget {
+  //Clase auxiliar que crea los elementos que se mostrarán en el Drawer  
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -41,6 +42,7 @@ class DrawerBuilder extends StatelessWidget {
       );
   }
 
+  //Método que crea el elemento del Drawer
   Widget _elementsMenu({required String text, required IconData icon, VoidCallback? onClicked,}) {
     return ListTile(
       leading: Icon(icon),
@@ -50,6 +52,7 @@ class DrawerBuilder extends StatelessWidget {
     );
   }
 
+  //Método que cambia las páginas según el elemento que pulsemos
   void _selectedElement(BuildContext context, int i) {
     switch (i) {
       case 0:
