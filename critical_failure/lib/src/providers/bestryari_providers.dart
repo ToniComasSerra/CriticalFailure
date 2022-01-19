@@ -11,9 +11,8 @@ class _BestyariProvider {
     final resposta = await rootBundle.loadString('data/bestiary.json');
     Map dataMap = json.decode(resposta);
     opcions = dataMap['monsters'];
-    print(opcions);
     return opcions;
   }
 }
 
-final bestyariProvider = new _BestyariProvider();
+final bestyariProvider = _BestyariProvider();

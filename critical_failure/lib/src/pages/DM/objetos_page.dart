@@ -1,26 +1,23 @@
-import 'package:critical_failure/src/providers/bestryari_providers.dart';
-import 'package:critical_failure/src/providers/menu_providers.dart';
-import 'package:critical_failure/src/utils/icona_string.dart';
+import 'package:critical_failure/src/providers/item_providers.dart';
 import 'package:flutter/material.dart';
-import 'dart:convert';
 
-class BestyariPage extends StatelessWidget {
-  const BestyariPage(BuildContext context, {Key? key}) : super(key: key);
+class ObjetosPage extends StatelessWidget {
+  const ObjetosPage(BuildContext context, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: new Center(child: new Text("Bestyari", textAlign: TextAlign.center),),
+      appBar: AppBar(title: new Center(child: new Text("Objetos", textAlign: TextAlign.center),),
              backgroundColor: Colors.green),
              backgroundColor: Colors.green.shade200,
-        body: _opcionsBestyari()
+        body: _opcionsObjeto()
     );
      }
 }
 
-Widget _opcionsBestyari() {
+Widget _opcionsObjeto() {
   return FutureBuilder(
-    future: bestyariProvider.CarregarBestyari(),
+    future: itemProvider.CarregarItem(),
     builder: (context, AsyncSnapshot<List<dynamic>> snapshot) {
       return ListView(
         children: _llistat(context, snapshot.data),

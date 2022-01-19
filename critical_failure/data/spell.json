@@ -1,0 +1,20 @@
+{
+    "nomApp" : "Spells",
+    "spells" : [
+        {
+            "nom" : "Bola de Fuego",
+            "img" : "boladefuego.jpg",
+            "texte": "Un rayo brillante surge de tu dedo índice hasta un punto que elijas dentro del alcance y explota con un leve estruendo en un estallido de llamas. Todas las criaturas que se encuentren en una esfera de 20 pies de radio cuyo centro sea ese punto deben hacer una tirada de salvación de Destreza: si fallan, reciben 8d6 puntos de daño por fuego y, si tienen éxito, la mitad. El fuego se propaga en las esquinas e incinera los objetos inflamables que se encuentren en el área y que nadie lleve puestos ni transporte."
+        },
+        {
+            "nom" : "Cura",
+            "img" : "heal.png",
+            "texte": "Heal"
+        },
+        {
+            "nom" : "Alzar a los muertos",
+            "img" : "alzar.jpg",
+            "texte": "Devuelves a la vida a una criatura muerta que tocas, siempre y cuando no lleve muerta más de 10 días. Si el alma de la criatura es voluntaria y está en libertad para volver al cuerpo, la criatura vuelve a la vida con 1 punto de golpe."
+        }
+    ]
+}
