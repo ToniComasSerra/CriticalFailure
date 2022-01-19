@@ -25,7 +25,7 @@ class _CharacterSheetState extends State<CharacterSheet> {
       ),
       body: FormBuilder(
         key: _formKey,
-        child: Column(
+        child: ListView(
           children: [
             const Padding(padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10)),
 
@@ -33,7 +33,7 @@ class _CharacterSheetState extends State<CharacterSheet> {
               placeholder: AssetImage('assets/dado.gif'), 
               image: NetworkImage('https://i.imgur.com/SdRQ8eh.png'),
               fadeInDuration: Duration(milliseconds: 100),
-              height: 200,
+              height: 100,
               fit: BoxFit.cover,
             ),
 
@@ -92,7 +92,9 @@ class _CharacterSheetState extends State<CharacterSheet> {
                     padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
                   ),
                   onPressed: () {
-                    
+                    if(_formKey.currentState!.validate()) {
+                      
+                    }
                   },
                 )
               ],
@@ -104,4 +106,3 @@ class _CharacterSheetState extends State<CharacterSheet> {
     );
   }
 }
-
