@@ -10,6 +10,7 @@ class Clerigo extends StatelessWidget {
         children: [
           SizedBox(height: 20.0),
 
+          //Aquí cargamos la imagen en un Container para su mejor uso
           Container(
             child: Column(
               children: [
@@ -26,6 +27,7 @@ class Clerigo extends StatelessWidget {
 
           SizedBox(height: 20.0),
 
+          //Container con RichText, lo que nos permite editar y darle formato al texto
           Container(
             child: RichText(
               textAlign: TextAlign.center,
@@ -46,30 +48,35 @@ class Clerigo extends StatelessWidget {
 
           Padding(padding: EdgeInsets.symmetric(vertical: 30)),
 
+          /*
+           * Align nos permitirá alinear el botón. El botón utiliza un RichText para darle formato
+           * al texto. En el evento onPressed() hemos añadido un enlace a un vídeo de youtube
+           * mediante una dependencia llamada url_launcher.
+           */
           Align(
             alignment: Alignment.bottomCenter,
             child: ElevatedButton(
-            child: RichText(
-              text: TextSpan(
-                text: 'Guía Clérigo',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold
+              child: RichText(
+                text: TextSpan(
+                  text: 'Guía Clérigo',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold
+                  )
                 )
-              )
-            ),
-            style: ElevatedButton.styleFrom(
-              primary: Colors.red[300],
-              minimumSize: Size(100, 100)
-            ),
-            onPressed: () async {
+              ),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.red[300],
+                minimumSize: Size(100, 100)
+              ),
+              onPressed: () async {
                 if (await canLaunch("https://youtu.be/y84OYRwzZU8"))
                   launch("https://youtu.be/y84OYRwzZU8");
                 else
                 print("Error, no se puede acceder a la URL");
-            }
-          ),
+              }
+            ),
           )
         ],
       ),

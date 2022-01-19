@@ -7,6 +7,7 @@ class Elfo extends StatelessWidget {
       backgroundColor: Colors.red[100],
       body: ListView(
         children: [
+          //Aquí cargamos la imagen en un Container para su mejor uso
           Container(
             child: Column(
               children: [
@@ -23,6 +24,7 @@ class Elfo extends StatelessWidget {
 
           SizedBox(height: 20.0),
 
+          //Container con RichText, lo que nos permite editar y darle formato al texto
           Container(
             child: RichText(
               textAlign: TextAlign.center,

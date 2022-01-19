@@ -2,6 +2,7 @@ import 'package:critical_failure/src/pages/player_subpages/drawer_builder.dart';
 import 'package:flutter/material.dart';
 
 class Player extends StatelessWidget {
+  //Clase que nos permitirá acceder a los subelementos que servirán para introducir al jugador a una partida
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,7 +13,7 @@ class Player extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          
+          //Aquí cargamos la imagen en un Container para su mejor uso
           Container(
             child: Column(
               children: [
@@ -23,7 +24,10 @@ class Player extends StatelessWidget {
                   height: 250,
                   fit: BoxFit.cover,
                 ),
+
                 SizedBox(height: 30.0),
+
+                //Container con RichText, lo que nos permite editar y darle formato al texto
                 Container(
                   child: RichText(
                     textAlign: TextAlign.center,
@@ -53,6 +57,7 @@ class Player extends StatelessWidget {
           ),
         ],
       ),
+      //Llamado a la clase DrawerBuilder que creará el Drawer (el menú lateral)
       drawer: DrawerBuilder(),
     );
   }

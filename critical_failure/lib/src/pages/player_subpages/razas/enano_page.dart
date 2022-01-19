@@ -6,9 +6,10 @@ class Enano extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.red[100],
       body: ListView(
-        children: [SizedBox(height: 20.0),
+        children: [
+          SizedBox(height: 20.0),
 
-
+          //Aquí cargamos la imagen en un Container para su mejor uso
           Container(
             child: Column(
               children: [
@@ -25,6 +26,7 @@ class Enano extends StatelessWidget {
 
           SizedBox(height: 20.0),
 
+          //Container con RichText, lo que nos permite editar y darle formato al texto
           Container(
             child: RichText(
               textAlign: TextAlign.center,
