@@ -15,7 +15,18 @@ class HomePage extends StatelessWidget {
         ),
         backgroundColor: Colors.blue[300],
       ),
-      body: _opcionsMenu(),
+      body: Column(children: <Widget>[
+        SizedBox(
+          height: 220,
+          width: 350,
+          child: _mostrarIcono(),
+        ),
+        SizedBox(
+          height: 350,
+          child: _opcionsMenu(),
+        )
+      ],)
+      
     );
   }
 }
@@ -45,4 +56,13 @@ List<Widget> _llistat(BuildContext context, List<dynamic>? data) {
     elements..add(widgetTemp)..add(const Divider());
    });
   return elements;
+}
+
+Widget _mostrarIcono() {
+  return const FadeInImage(
+    placeholder: AssetImage('assets/dado.gif'), 
+    image: NetworkImage('https://noticiasgamer.com/wp-content/uploads/2021/03/calabozos_y_dragones.jpg'),
+    fadeInDuration: Duration(milliseconds: 100),
+    height: 250,
+  );
 }
