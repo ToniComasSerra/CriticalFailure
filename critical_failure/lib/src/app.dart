@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget{
         Locale('fr'),
         Locale('it'),
       ],
+      // Es muy importante añadir las localizaciones cuando trabajamos con dependencias importadas
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,

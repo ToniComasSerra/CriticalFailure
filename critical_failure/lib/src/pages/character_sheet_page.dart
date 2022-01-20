@@ -10,6 +10,8 @@ class CharacterSheet extends StatefulWidget {
 }
 
 class _CharacterSheetState extends State<CharacterSheet> {
+  // La formkey es clave para trabajar con formularios, se usa principalmente
+  // con currentState para verificar cada input del formulario
   final _formKey = GlobalKey<FormBuilderState>();
   var clases = ['Luchador', 'Mago', 'Clerigo'];
   var razas = ['Humano', 'Elfo', 'Enano'];
@@ -23,7 +25,10 @@ class _CharacterSheetState extends State<CharacterSheet> {
         title: const Text('Ficha de Personaje'),
         backgroundColor: Colors.yellow[300],
       ),
+      // En lugar de usar los form de flutter, es una version descargada por dependencias
+      // Los datos se manejan mucho mas facil con la propiedad values
       body: FormBuilder(
+        // Aqui asignamos la key al formulario
         key: _formKey,
         child: ListView(
           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
@@ -35,6 +40,7 @@ class _CharacterSheetState extends State<CharacterSheet> {
             _mostrarBotones()
           ],
         ),
+        // Se asegura que el formulario sea validado
         autovalidateMode: AutovalidateMode.onUserInteraction,
       ),
     );
@@ -50,18 +56,22 @@ class _CharacterSheetState extends State<CharacterSheet> {
   }
 
   Widget _inputNombre() {
+    // Campo custpmizado en lugar del TextField normal
     return FormBuilderTextField(
       name: 'nombre',
       decoration: const InputDecoration(labelText: 'Nombre para el personaje'),
+      // Validacion para que el campo no devuelva un null
       validator: FormBuilderValidators.required(context)
     );
   }
 
   Widget _inputClase() {
+    // Campo customizado el lugar del dropdownbutton
     return FormBuilderDropdown(
       name: 'clase',
       decoration: const InputDecoration(labelText: 'Selecciona una clase para el personaje'),
       initialValue: 'Luchador',
+      // Aqui se inserta el map y el value del input con nombre clase, sera el valor seleccionado
       items: clases.map((clase) => DropdownMenuItem(
         value: clase,
         child: Text(clase),
@@ -92,6 +102,7 @@ class _CharacterSheetState extends State<CharacterSheet> {
             padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
           ),
           onPressed: () {
+            // Funcionalidad para reiniciar el formulario
             _formKey.currentState!.reset();
             FocusScope.of(context).unfocus();
           } ,
@@ -104,9 +115,11 @@ class _CharacterSheetState extends State<CharacterSheet> {
             padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
           ),
           onPressed: () => {
+            // Se guarda el estado del formulario para realizar la validacion
             _formKey.currentState!.save(),
 
             if(_formKey.currentState!.validate()) {
+              // Si todos los campos han sido seleccionados, se informa del exito por consola
               print('Validation Succes, the hero is: ' + _formKey.currentState!.value.toString()),
             } else {
               print('Validation Failed')

@@ -13,7 +13,7 @@ class DrawerBuilder extends StatelessWidget {
         child: Material(
             color: Colors.red[300],
             child: ListView(
-              padding: EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(20.0),
               children: <Widget> [
                 _elementsMenu(
                   text: 'Inicio',
@@ -30,7 +30,7 @@ class DrawerBuilder extends StatelessWidget {
                   icon: Icons.people,
                   onClicked: () => _selectedElement(context, 2),
                 ),
-                Divider(color: Colors.white, height: 20),
+                const Divider(color: Colors.white, height: 20),
                 _elementsMenu(
                   text: 'Menú de inicio', 
                   icon: Icons.arrow_back,
@@ -46,7 +46,7 @@ class DrawerBuilder extends StatelessWidget {
   Widget _elementsMenu({required String text, required IconData icon, VoidCallback? onClicked,}) {
     return ListTile(
       leading: Icon(icon),
-      title: Text(text, style: TextStyle(fontSize: 18, color: Colors.white),),
+      title: Text(text, style: const TextStyle(fontSize: 18, color: Colors.white),),
       hoverColor: Colors.white70,
       onTap: onClicked,
     );
@@ -72,7 +72,7 @@ class DrawerBuilder extends StatelessWidget {
         break;
       case 3:
         Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => HomePage(),
+          builder: (context) => const HomePage(),
         ));
         break;
       default:

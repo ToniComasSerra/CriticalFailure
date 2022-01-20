@@ -20,9 +20,9 @@ class PlayerClases extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.red[100],
         appBar: AppBar(
-          title: Text('Clases'),
+          title: const Text('Clases'),
           backgroundColor: Colors.red[300],
-          bottom: TabBar(
+          bottom: const TabBar(
             //Cambio del color del indicador de clase en la que nos encontramos
             indicatorColor: Colors.white,
             //Nombre de las tabs que habrá en el TabBar

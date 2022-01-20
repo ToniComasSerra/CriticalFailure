@@ -7,6 +7,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Un simple icono y el menu trabajado en clase mediante json
     return Scaffold(
       backgroundColor: Colors.blue[100],
       appBar: AppBar(
@@ -30,6 +31,7 @@ class HomePage extends StatelessWidget {
   }
 }
 
+// El future builder del q se vale para generar la lista de opciones
 Widget _opcionsMenu() {
   return FutureBuilder(
     future: menuProvider.CarregarDades(),
@@ -41,6 +43,7 @@ Widget _opcionsMenu() {
   );
 }
 
+// La estructura de los elementos que lee el json y altera las rutas para cambiar de paginas
 List<Widget> _llistat(BuildContext context, List<dynamic>? data) {
   final List<Widget> elements = [];
   data?.forEach((element) {

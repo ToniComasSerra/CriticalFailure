@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 Map<String, WidgetBuilder> getRoutes() {
   return <String, WidgetBuilder>{
     '/' : (BuildContext context) => const HomePage(),
-    'character' : (BuildContext context) => CharacterSheet(),
+    'character' : (BuildContext context) => const CharacterSheet(),
     'player' : (BuildContext context) => Player(),
     'dm' : (BuildContext context) => const DungeonMaster(),
   };
