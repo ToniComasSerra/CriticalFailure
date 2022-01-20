@@ -33,13 +33,13 @@ class Luchador extends StatelessWidget {
               textAlign: TextAlign.center,
               text: TextSpan(
                 style: TextStyle(color: Colors.black, fontSize: 20),
-                  children: <TextSpan> [
-                    TextSpan(text: 'La clase del '),
-                    TextSpan(text: 'luchador ', style: TextStyle(fontWeight: FontWeight.bold)),
-                    TextSpan(text: 'es la clase marcial más básica. Es la idónea si quieres '),
-                    TextSpan(text: 'equilibrar daño y vida ', style: TextStyle(fontWeight: FontWeight.bold)),
-                    TextSpan(text: 'y es perfecta para principiantes por la versatilidad en combate.')
-                  ]
+                children: <TextSpan> [
+                  TextSpan(text: 'La clase del '),
+                  TextSpan(text: 'luchador ', style: TextStyle(fontWeight: FontWeight.bold)),
+                  TextSpan(text: 'es la clase marcial más básica. Es la idónea si quieres '),
+                  TextSpan(text: 'equilibrar daño y vida ', style: TextStyle(fontWeight: FontWeight.bold)),
+                  TextSpan(text: 'y es perfecta para principiantes por la versatilidad en combate.')
+                ]
               ),
             ),
           ),
@@ -54,30 +54,28 @@ class Luchador extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: ElevatedButton(
-            child: RichText(
-              text: TextSpan(
-                text: 'Guía Luchador',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold
+              child: RichText(
+                text: TextSpan(
+                  text: 'Guía Luchador',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold
+                  )
                 )
-              )
+              ),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.red[300],
+                minimumSize: Size(100, 100)
+              ),
+              onPressed: () async {
+                  if (await canLaunch("https://youtu.be/nVReBH3QYD0"))
+                    launch("https://youtu.be/nVReBH3QYD0");
+                  else
+                  print("Error, no se puede acceder a la URL");
+              }
             ),
-            style: ElevatedButton.styleFrom(
-              primary: Colors.red[300],
-              minimumSize: Size(100, 100)
-            ),
-            onPressed: () async {
-                if (await canLaunch("https://youtu.be/nVReBH3QYD0"))
-                  launch("https://youtu.be/nVReBH3QYD0");
-                else
-                print("Error, no se puede acceder a la URL");
-            }
-            
           ),
-          ),
-          
         ],
       ),
     );

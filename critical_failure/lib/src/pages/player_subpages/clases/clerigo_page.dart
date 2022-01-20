@@ -33,15 +33,15 @@ class Clerigo extends StatelessWidget {
               textAlign: TextAlign.center,
               text: TextSpan(
                 style: TextStyle(color: Colors.black, fontSize: 20),
-                  children: <TextSpan> [
-                    TextSpan(text: 'La clase del '),
-                    TextSpan(text: 'clérigo ', style: TextStyle(fontWeight: FontWeight.bold)),
-                    TextSpan(text: 'es una clase centrada principalmente en '),
-                    TextSpan(text: 'sanar, proteger de estados alterados ', style: TextStyle(fontWeight: FontWeight.bold)),
-                    TextSpan(text: 'y '),
-                    TextSpan(text: 'potenciar al equipo', style: TextStyle(fontWeight: FontWeight.bold)),
-                    TextSpan(text: '. También poseen poderosos hechizos dañinos.')
-                  ]
+                children: <TextSpan> [
+                  TextSpan(text: 'La clase del '),
+                  TextSpan(text: 'clérigo ', style: TextStyle(fontWeight: FontWeight.bold)),
+                  TextSpan(text: 'es una clase centrada principalmente en '),
+                  TextSpan(text: 'sanar, proteger de estados alterados ', style: TextStyle(fontWeight: FontWeight.bold)),
+                  TextSpan(text: 'y '),
+                  TextSpan(text: 'potenciar al equipo', style: TextStyle(fontWeight: FontWeight.bold)),
+                  TextSpan(text: '. También poseen poderosos hechizos dañinos.')
+                ]
               ),
             ),
           ),
