@@ -69,31 +69,7 @@ class DungeonMaster extends StatelessWidget {
     );
   }
 }
-
+//Widget per ahorrar temps cada vegada que vulgui introduir un imatge de internet
 Widget _showIcon(img) {
   return Image.network(img, height: 120);
-}
-
-void _gotoDetailsPage(BuildContext context, titulo, tg, img) {
-  Navigator.of(context).push(MaterialPageRoute<void>(
-    builder: (BuildContext context) => Scaffold(
-      appBar: AppBar(
-          title: new Center(
-            child: new Text(titulo, textAlign: TextAlign.center),
-          ),
-          backgroundColor: Colors.green),
-      backgroundColor: Colors.green.shade200,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Hero(
-              tag: tg,
-              child: Image.network(img),
-            ),
-          ],
-        ),
-      ),
-    ),
-  ));
 }
