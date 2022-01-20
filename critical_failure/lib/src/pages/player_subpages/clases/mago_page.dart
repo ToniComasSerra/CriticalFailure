@@ -34,13 +34,13 @@ class Mago extends StatelessWidget {
               textAlign: TextAlign.center,
               text: TextSpan(
                 style: TextStyle(color: Colors.black, fontSize: 20),
-                  children: <TextSpan> [
-                    TextSpan(text: 'La clase del '),
-                    TextSpan(text: 'mago ', style: TextStyle(fontWeight: FontWeight.bold)),
-                    TextSpan(text: 'es una clase de conjurador que utiliza '),
-                    TextSpan(text: 'hechizos poderosos de un único objetivo o en área', style: TextStyle(fontWeight: FontWeight.bold)),
-                    TextSpan(text: '. Es muy débil y cualquier ataque que reciba puede ser fatal.')
-                  ]
+                children: <TextSpan> [
+                  TextSpan(text: 'La clase del '),
+                  TextSpan(text: 'mago ', style: TextStyle(fontWeight: FontWeight.bold)),
+                  TextSpan(text: 'es una clase de conjurador que utiliza '),
+                  TextSpan(text: 'hechizos poderosos de un único objetivo o en área', style: TextStyle(fontWeight: FontWeight.bold)),
+                  TextSpan(text: '. Es muy débil y cualquier ataque que reciba puede ser fatal.')
+                ]
               ),
             ),
           ),
@@ -55,20 +55,20 @@ class Mago extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: ElevatedButton(
-            child: RichText(
-              text: TextSpan(
-                text: 'Guía Mago',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold
+              child: RichText(
+                text: TextSpan(
+                  text: 'Guía Mago',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold
+                  )
                 )
-              )
-            ),
-            style: ElevatedButton.styleFrom(
-              primary: Colors.red[300],
-              minimumSize: Size(100, 100)
-            ),
+              ),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.red[300],
+                minimumSize: Size(100, 100)
+              ),
               onPressed: () async {
                 if (await canLaunch("https://youtu.be/U1Gs8WTddI4"))
                   launch("https://youtu.be/U1Gs8WTddI4");
