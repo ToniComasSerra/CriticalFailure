@@ -94,6 +94,7 @@ class _CharacterSheetState extends State<CharacterSheet> {
 
   Widget _mostrarBotones() {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         ElevatedButton(
           child: const Text('Reset'),
