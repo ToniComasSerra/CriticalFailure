@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
       ),
       body: Column(children: <Widget>[
         SizedBox(
-          height: 220,
+          height: 250,
           width: 350,
           child: _mostrarIcono(),
         ),
@@ -25,8 +25,7 @@ class HomePage extends StatelessWidget {
           height: 350,
           child: _opcionsMenu(),
         )
-      ],)
-      
+      ])
     );
   }
 }
@@ -61,7 +60,7 @@ List<Widget> _llistat(BuildContext context, List<dynamic>? data) {
 Widget _mostrarIcono() {
   return const FadeInImage(
     placeholder: AssetImage('assets/dado.gif'), 
-    image: NetworkImage('https://noticiasgamer.com/wp-content/uploads/2021/03/calabozos_y_dragones.jpg'),
+    image: NetworkImage('https://i.imgur.com/v56bJyd.png'),
     fadeInDuration: Duration(milliseconds: 100),
     height: 250,
   );

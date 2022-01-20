@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:form_builder_validators/form_builder_validators.dart';
 
 class CharacterSheet extends StatefulWidget {
   const CharacterSheet({Key? key}) : super(key: key);
@@ -12,9 +13,6 @@ class _CharacterSheetState extends State<CharacterSheet> {
   final _formKey = GlobalKey<FormBuilderState>();
   var clases = ['Luchador', 'Mago', 'Clerigo'];
   var razas = ['Humano', 'Elfo', 'Enano'];
-  String _nombre = '';
-  String _clase = '';
-  String _raza = '';
 
   @override
   Widget build(BuildContext context) {
@@ -55,16 +53,7 @@ class _CharacterSheetState extends State<CharacterSheet> {
     return FormBuilderTextField(
       name: 'nombre',
       decoration: const InputDecoration(labelText: 'Nombre para el personaje'),
-      onChanged: (valor) {
-        setState(() {
-          _nombre = valor!;
-        });
-      },
-      /*validator: (value) {
-        if(value!.isEmpty || !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
-          return "Inserta un nombre valido";
-        }
-      },*/
+      validator: FormBuilderValidators.required(context)
     );
   }
 
@@ -115,14 +104,16 @@ class _CharacterSheetState extends State<CharacterSheet> {
             padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
           ),
           onPressed: () {
-            showDialog(
-              context: context,
-              builder: (context) {
-                return const AlertDialog(
-                  title: Text('Personatje Valid!'),
-                );
-              }
-            );
+            _formKey.currentState!.save();
+            if(_formKey.currentState!.validate()) {
+              
+              const AlertDialog(
+                title: Text('Resultado'),
+                content: Text('Personaje'),
+              );
+            } else {
+              print('Validation Failed');
+            }
           }
         )  
       ],
