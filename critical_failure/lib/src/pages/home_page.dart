@@ -10,7 +10,9 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.blue[100],
       appBar: AppBar(
-        title: const Text('Menú Inicial'),
+        title: const Center(
+          child: Text('Critical Failure'),
+        ),
         backgroundColor: Colors.blue[300],
       ),
       body: _opcionsMenu(),
