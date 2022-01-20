@@ -103,19 +103,16 @@ class _CharacterSheetState extends State<CharacterSheet> {
             primary: Colors.yellow[300],
             padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
           ),
-          onPressed: () {
-            _formKey.currentState!.save();
+          onPressed: () => {
+            _formKey.currentState!.save(),
+
             if(_formKey.currentState!.validate()) {
-              
-              const AlertDialog(
-                title: Text('Resultado'),
-                content: Text('Personaje'),
-              );
+              print('Validation Succes, the hero is: ' + _formKey.currentState!.value.toString()),
             } else {
-              print('Validation Failed');
+              print('Validation Failed')
             }
           }
-        )  
+        )
       ],
     );
   }
