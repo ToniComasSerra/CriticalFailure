@@ -8,6 +8,7 @@ class DungeonMaster extends StatelessWidget {
   const DungeonMaster({Key? key}) : super(key: key);
 
   static const String _title = 'Dungeon Master';
+  //Variables per cambiar images de forme rapide mitjençant links
   static var mon =
       'https://static.wikia.nocookie.net/disney/images/9/9e/Monstruos_S.A..png/revision/latest/scale-to-width-down/250?cb=20180305225626&path-prefix=es';
   static var loot =
@@ -27,6 +28,7 @@ class DungeonMaster extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Divider(),
+          //Widget per aconseguir arodoni els cantons
           ClipRRect(
               borderRadius: BorderRadius.circular(40.0),
               child: Align(
@@ -36,6 +38,7 @@ class DungeonMaster extends StatelessWidget {
               )),
           Divider(),
           Table(children: <TableRow>[
+            //Widget per poder distribuir tres seudo botons de forme lineal
             TableRow(children: [
               GestureDetector(
                   onTap: () => Navigator.push(
@@ -62,31 +65,7 @@ class DungeonMaster extends StatelessWidget {
     );
   }
 }
-
+//Widget per ahorrar temps cada vegada que vulgui introduir un imatge de internet
 Widget _showIcon(img) {
   return Image.network(img, height: 120);
-}
-
-void _gotoDetailsPage(BuildContext context, titulo, tg, img) {
-  Navigator.of(context).push(MaterialPageRoute<void>(
-    builder: (BuildContext context) => Scaffold(
-      appBar: AppBar(
-          title: new Center(
-            child: new Text(titulo, textAlign: TextAlign.center),
-          ),
-          backgroundColor: Colors.green),
-      backgroundColor: Colors.green.shade200,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Hero(
-              tag: tg,
-              child: Image.network(img),
-            ),
-          ],
-        ),
-      ),
-    ),
-  ));
 }
